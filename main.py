@@ -4,6 +4,8 @@ import tweepy
 from tweepy import api
 import sys
 import os
+import datetime
+
 key_file = "Keys.txt"
 
 def getAllKeys():
@@ -33,9 +35,13 @@ if __name__=='__main__':
     auth.set_access_token(access_token,access_token_secret)
     api = tweepy.API(auth)
     wait_time = 1200
+    dt_now = datetime.datetime.now()
+    tweet_first = str(dt_now.hour) +  "時" + str(dt_now.minute) + "分開始"
+    api.update_status(tweet_first)
 
     while True:
         char_num,num_diff = get_progress(file_name,char_num)
         tweet_content = "二十分間の進捗は"+str(num_diff)+"字です."
         api.update_status(tweet_content)
+        print(tweet_content)
         time.sleep(wait_time)
