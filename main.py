@@ -15,7 +15,7 @@ def get_progress(file_name,char_num):
         character_all = f.read()
     num_diff = len(character_all) - char_num
     char_num = len(character_all)
-    return
+    return char_num, num_diff
 
 if __name__=='__main__':
     file_name = sys.argv[1]
