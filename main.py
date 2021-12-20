@@ -7,7 +7,7 @@ import os
 import datetime
 
 key_file = "Keys.txt"
-
+file = "file_name.txt"
 def getAllKeys():
     with open(key_file) as f:
         keys = [s.strip() for s in f.readlines()]
@@ -27,7 +27,8 @@ def get_progress(file_name,char_num):
     return char_num, num_diff
 
 if __name__=='__main__':
-    file_name = "C:\\Users\\ilove\\Documents\\research\\shuron\\shuron_2_CharacterRecognition.tex"
+    with open(file) as f:
+        file_name = f.read()
     char_num = 0
     num_diff = 0
     consumer_key,consumer_secret,access_token,access_token_secret = getAllKeys()
