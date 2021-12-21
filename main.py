@@ -1,9 +1,6 @@
-import schedule
 import time
 import tweepy
 from tweepy import api
-import sys
-import os
 import datetime
 
 key_file = "Keys.txt"
