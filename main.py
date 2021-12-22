@@ -32,7 +32,7 @@ if __name__=='__main__':
     auth = tweepy.OAuthHandler(consumer_key,consumer_secret)
     auth.set_access_token(access_token,access_token_secret)
     api = tweepy.API(auth)
-    wait_time = 1200
+    wait_time = 1199
     dt_now = datetime.datetime.now()
     tweet_first = str(dt_now.hour) +  "時" + str(dt_now.minute) + "分開始"
     api.update_status(tweet_first)
